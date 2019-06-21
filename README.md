@@ -1,6 +1,6 @@
 # spring-framework-repository
 
-# Create Models named Customer and CustomerType
+# 1. Create Models named Customer and CustomerType
   
     @Entity
     @AllArgsConstructor
@@ -28,14 +28,14 @@
       public String customerTypeName;
     }
 
-# Create Repository
+# 2. Create Repository
 
     @Repository
     public interface CustomerRepository extends CrudRepository<Customer, Integer> {
       // ...
     }
   
-# Write Function in CustomerRepository
+# 3. Write Function in CustomerRepository
 
   ## WHERE CustomerName = "Furkan"
      public List<Tunnel> findByCustomerName(String customerName);
