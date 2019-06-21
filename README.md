@@ -9,7 +9,7 @@
     public class Customer {
       @Id
       @GeneratedValue(strategy = GenerationType.IDENTITY)
-      public int Id;
+      public int id;
       public String customerName;
 
       @OneToOne
@@ -24,7 +24,7 @@
     public class CustomerType {
       @Id
       @GeneratedValue(strategy = GenerationType.IDENTITY)
-      public int Id;
+      public int id;
       public String customerTypeName;
     }
 
@@ -37,5 +37,11 @@
   
 # Write Function in CustomerRepository
 
-## WHERE CustomerName = "Furkan"
+  ## WHERE CustomerName = "Furkan"
      public List<Tunnel> findByCustomerName(String customerName);
+     
+  ## WHERE CustomerName = "Furkan" AND Customer.CustomerTypeId = 1
+     public List<Tunnel> findByCustomerNameAndCustomerTypeId(String customerName, int customerType);
+     
+  ## WHERE CustomerName = "Furkan" AND Customer.CustomerTypeId = 1
+     public List<Tunnel> findByCustomerNameAndCustomerType(String customerName, CustomerType customerType);
