@@ -36,3 +36,6 @@
     }
   
 # Write Function in CustomerRepository
+
+## WHERE CustomerName = "Furkan"
+     public List<Tunnel> findByCustomerName(String customerName);
