@@ -40,8 +40,12 @@
   ## WHERE CustomerName = "Furkan"
      public List<Tunnel> findByCustomerName(String customerName);
      
-  ## WHERE CustomerName = "Furkan" AND Customer.CustomerTypeId = 1
+  ## WHERE CustomerName = "Furkan" AND CustomerType.CustomerTypeId = 1
      public List<Tunnel> findByCustomerNameAndCustomerTypeId(String customerName, int customerType);
      
-  ## WHERE CustomerName = "Furkan" AND Customer.CustomerTypeId = 1
+  ## WHERE CustomerName = "Furkan" AND CustomerType.CustomerTypeId = 1
      public List<Tunnel> findByCustomerNameAndCustomerType(String customerName, CustomerType customerType);
+     
+  ## SELECT * FROM Customer WHERE CustomerType = XXX
+  @Query("SELECT t FROM Customer t WHERE t.customerType = :customerType")
+  Optional<Iterable<Customer>> select(@Param("customerType") Optional<CustomerType> customerType);
