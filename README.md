@@ -47,5 +47,5 @@
      public List<Tunnel> findByCustomerNameAndCustomerType(String customerName, CustomerType customerType);
      
   ## SELECT * FROM Customer WHERE CustomerType = XXX
-  @Query("SELECT t FROM Customer t WHERE t.customerType = :customerType")
-  Optional<Iterable<Customer>> select(@Param("customerType") Optional<CustomerType> customerType);
+     @Query("SELECT t FROM Customer t WHERE t.customerType = :customerType")
+     Optional<Iterable<Customer>> select(@Param("customerType") Optional<CustomerType> customerType);
